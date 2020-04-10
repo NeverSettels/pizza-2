@@ -105,9 +105,11 @@ $(document).ready(() => {
             <div id=${pizza.id}class="order-card">
             <p>Order #: ${pizza.id}</p>
             <img src=${chooseImg(pizza.crust)} alt='pizza'>
-            <p>Toppings: ${pizza.toppings.forEach(topping => `<span>${topping}</span>`)})} <p>
+            <p id=${'pizza' + pizza.id}>Toppings: $<p>
             </div>
             `)
+
+            pizza.toppings.forEach(topping => { $(`pizza${pizza.id}`).text(`<span>${topping}</span>`) })
         })
 
 
