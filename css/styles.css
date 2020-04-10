@@ -1,0 +1,8 @@
+.order-card{
+  background-color: grey;
+  width: 30vh;
+  height: 40vh;
+}
+.order-card img{
+  width: 80%;
+}

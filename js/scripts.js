@@ -102,14 +102,12 @@ $(document).ready(() => {
         $('#orders').append()
         myOrder.pizzas.forEach(pizza => {
             $('#orders').append(`
-            <div id=${pizza.id}class="order-card">
+            <div id=${pizza.id} class="order-card">
             <p>Order #: ${pizza.id}</p>
             <img src=${chooseImg(pizza.crust)} alt='pizza'>
-            <p id=${'pizza' + pizza.id}>Toppings: $<p>
+            <p>Cost: $${pizza.price}</p>
             </div>
             `)
-
-            pizza.toppings.forEach(topping => { $(`pizza${pizza.id}`).text(`<span>${topping}</span>`) })
         })
 
 
