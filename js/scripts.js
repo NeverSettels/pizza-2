@@ -7,6 +7,7 @@ Order.prototype.addPizza = function (pizza) {
     this.pizzas.push(pizza)
 }
 Order.prototype.calcTotal = function () {
+    this.priceTotal = 0;
     this.pizzas.forEach(pizza => {
         this.priceTotal += pizza.price;
     })
@@ -29,7 +30,37 @@ Pizza.prototype.updateCrust = function (crust) {
 Pizza.prototype.updateSauce = function (sauce) {
     this.sauce = sauce;
 }
-
+Pizza.prototype.calcPrice = function () {
+    this.toppings.forEach(topping => {
+        this.price += 1
+    })
+    switch (this.crust) {
+        case 'dd':
+            this.price += 2;
+            break;
+        case 't':
+            this.price += 1;
+            break;
+        case 'gf':
+            this.price += 3;
+            break;
+        case 'r':
+            this.price += 0;
+            break;
+        default:
+            break;
+    }
+    switch (this.sauce) {
+        case 'a':
+            this.price += 1;
+            break;
+        case 'p':
+            this.price += 2;
+            break;
+        default:
+            break;
+    }
+}
 $(document).ready(() => {
     let myOrder = new Order();
     $('#order').submit(e => {
@@ -38,7 +69,12 @@ $(document).ready(() => {
         $("#order input:checkbox:checked").each(function () {
             newPizza.addTopping($(this).val());
         })
-        console.log(newPizza.toppings);
+        newPizza.updateCrust($('#crustInput').val())
+        newPizza.updateSauce($('#sauceInput').val())
+        newPizza.calcPrice();
+        myOrder.addPizza(newPizza)
+        myOrder.calcTotal();
+        console.log(myOrder);
 
     })
 })
