@@ -26,6 +26,8 @@ body{
   width: 80%;
 }
 #order{
+  background-color: rgba(211, 211, 211, 0.347);
+  border-radius: 1rem;
   width: 90%;
   display: flex;
   justify-content: space-evenly;
