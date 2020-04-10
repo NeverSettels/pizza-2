@@ -2,7 +2,15 @@
   background-color: grey;
   width: 30vh;
   height: 40vh;
+  margin: 1rem 0;
+  border-radius: 1rem;
 }
 .order-card img{
   width: 80%;
+}
+#orders{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-evenly;
+ justify-items: space-evenly;
 }

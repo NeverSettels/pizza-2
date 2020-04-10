@@ -98,12 +98,13 @@ $(document).ready(() => {
         newPizza.calcPrice();
         myOrder.addPizza(newPizza)
         myOrder.calcTotal();
+        $("#total").html(`<h2>Total: ${myOrder.priceTotal}</h2>`)
         console.log(myOrder);
-        $('#orders').append()
+        $('#orders').empty()
         myOrder.pizzas.forEach(pizza => {
             $('#orders').append(`
             <div id=${pizza.id} class="order-card">
-            <p>Order #: ${pizza.id}</p>
+            <p>Order #${pizza.id}</p>
             <img src=${chooseImg(pizza.crust)} alt='pizza'>
             <p>Cost: $${pizza.price}</p>
             </div>
