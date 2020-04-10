@@ -29,3 +29,16 @@ Pizza.prototype.updateCrust = function (crust) {
 Pizza.prototype.updateSauce = function (sauce) {
     this.sauce = sauce;
 }
+
+$(document).ready(() => {
+    let myOrder = new Order();
+    $('#order').submit(e => {
+        e.preventDefault();
+        let newPizza = new Pizza();
+        $("#order input:checkbox:checked").each(function () {
+            newPizza.addTopping($(this).val());
+        })
+        console.log(newPizza.toppings);
+
+    })
+})
