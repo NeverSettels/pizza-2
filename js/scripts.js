@@ -3,6 +3,14 @@ function Order() {
     this.priceTotal = 0;
 }
 
+Order.prototype.addPizza = function (pizza) {
+    this.pizzas.push(pizza)
+}
+Order.prototype.calcTotal = function () {
+    this.pizzas.forEach(pizza => {
+        this.priceTotal += pizza.price;
+    })
+}
 //calculate total methos tbc
 
 function Pizza() {
