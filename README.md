@@ -13,9 +13,9 @@ _This program is designed to let people choose toppings for a pizza and show the
 | Behavior | Input | Output |
 |----------|:-----:|--------|
 | Collect toppings from inputs | user selcts "PEPPERONI" | hits submit recives confirmatio of topping |
-| Pushes Selected Topping to pizza object | user selects "Anchovies" |User sees toppings: anchovies, price: 7}  |
-| Counts how many toppings are selected  | user selects "Anchovies" | adds one to total for each topping price: 8 |
-| Adds $ per toppings | user selects 2 toppings | pizza price goes up by 3 dollars |
+| Pushes Selected Topping to pizza object | user selects "Anchovies" |User sees price and an image depending on crust |
+| Counts how many toppings are selected  | user selects "Anchovies" | adds one to total for each topping price: 13 |
+| Adds $ per toppings | user selects 2 toppings | pizza price goes up by 4 dollars |
 | User can make multiple orders | user makes two pizzas | Sees the pizzas orderd so far displayed on bottom of the screen |
 | Collect price from all oders and diplay price | user selects 3 different pizzas | Order total: $30 is deplayed | 
 
