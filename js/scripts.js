@@ -1,6 +1,7 @@
 function Order() {
     this.pizzas = [];
     this.priceTotal = 0;
+    this.currentIndex = 0;
 }
 
 Order.prototype.addPizza = function (pizza) {
@@ -75,6 +76,11 @@ $(document).ready(() => {
         myOrder.addPizza(newPizza)
         myOrder.calcTotal();
         console.log(myOrder);
+        myOrder.pizzas.forEach(pizza => {
+
+        })
+
+
 
     })
 })
