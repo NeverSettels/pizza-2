@@ -67,6 +67,24 @@ Pizza.prototype.calcPrice = function () {
             break;
     }
 }
+
+function chooseImg(crust) {
+    let deepDish = 'https://i.pinimg.com/originals/6a/76/dd/6a76ddba63e88b7a186a9dbb0d0ee9de.png'
+    let thinCrust = 'https://4.bp.blogspot.com/-1LpctYP5ob4/T-zh-qGa_tI/AAAAAAAAIxM/9T1Y92zKxyM/s1600/Pizza.jpg'
+    let glutenFree = "https://www.hungryhowies.com/sites/default/files/styles/menu_item_280x175/public/images/menu-items/thumbnails/12._gluten_free_pizza.png?itok=GDdYhu-q"
+    let regular = 'https://www.cicis.com/wp-content/uploads/2019/04/pizza_categoryheader.png'
+    if (crust === 'Deep Dish') {
+        return deepDish
+    } else if (crust === 'Thin') {
+        return thinCrust;
+    } else if (crust === 'Gluten free') {
+        return glutenFree
+    } else {
+        return regular;
+    }
+
+}
+
 $(document).ready(() => {
     let myOrder = new Order();
     $('#order').submit(e => {
@@ -84,8 +102,10 @@ $(document).ready(() => {
         $('#orders').append()
         myOrder.pizzas.forEach(pizza => {
             $('#orders').append(`
-            <div class="order-card">
+            <div id=${pizza.id}class="order-card">
             <p>Order #: ${pizza.id}</p>
+            <img src=${chooseImg(pizza.crust)} alt='pizza'>
+            <p>Toppings: ${pizza.toppings.forEach(topping => `<span>${topping}</span>`)})} <p>
             </div>
             `)
         })
