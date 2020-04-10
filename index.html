@@ -13,7 +13,63 @@
 </head>
 
 <body class="container">
-
+    <form id='order'>
+        <div id='toppings'>
+            <h2>Toppings</h2>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="p" id="toppings1">
+                <label class="form-check-label" for="toppings">
+                    Pepperoni
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="ml" id="toppings2">
+                <label class="form-check-label" for="toppings">
+                    Meat Lovers
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="v" id="toppings3">
+                <label class="form-check-label" for="toppings">
+                    Veggie
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="a" id="toppings4">
+                <label class="form-check-label" for="toppings">
+                    Anchovies
+                </label>
+            </div>
+        </div>
+        <div id='crust'>
+            <div class="form-group">
+                <label for="crust">
+                    <h2>Crust</h2>
+                </label>
+                <select class="form-control" id="crustInput">
+                    <option value="dd">Deep Dish</option>
+                    <option value='t'>Thin</option>
+                    <option value='gf'>Gluten Free</option>
+                    <option value='r'>Regular</option>
+                </select>
+            </div>
+        </div>
+        <div id='sauce'>
+            <div class="form-group">
+                <label for="sauceInput">
+                    <h2>Sauce</h2>
+                </label>
+                <select class="form-control" id="sauceInput">
+                    <option value="m">Marinera</option>
+                    <option value='a'>Alfredo</option>
+                    <option value='p'>Pesto</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <button type="submit">Add to order</button>
+        </div>
+    </form>
 </body>
 
 </html>
