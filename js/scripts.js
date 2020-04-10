@@ -98,7 +98,7 @@ $(document).ready(() => {
         newPizza.calcPrice();
         myOrder.addPizza(newPizza)
         myOrder.calcTotal();
-        $("#total").html(`<h2>Total: ${myOrder.priceTotal}</h2>`)
+        $("#total").html(`<h2>Total: $${myOrder.priceTotal}</h2>`)
         console.log(myOrder);
         $('#orders').empty()
         myOrder.pizzas.forEach(pizza => {
