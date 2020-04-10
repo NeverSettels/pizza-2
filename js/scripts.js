@@ -5,7 +5,12 @@ function Order() {
 }
 
 Order.prototype.addPizza = function (pizza) {
+    pizza.id = this.orderNumber();
     this.pizzas.push(pizza)
+}
+Order.prototype.orderNumber = function () {
+    this.currentIndex += 1;
+    return this.currentIndex;
 }
 Order.prototype.calcTotal = function () {
     this.priceTotal = 0;
@@ -36,26 +41,26 @@ Pizza.prototype.calcPrice = function () {
         this.price += 1
     })
     switch (this.crust) {
-        case 'dd':
+        case 'Deep Dish':
             this.price += 2;
             break;
-        case 't':
+        case 'Thin':
             this.price += 1;
             break;
-        case 'gf':
+        case 'Gluten free':
             this.price += 3;
             break;
-        case 'r':
+        case 'Regular':
             this.price += 0;
             break;
         default:
             break;
     }
     switch (this.sauce) {
-        case 'a':
+        case 'Alfredo':
             this.price += 1;
             break;
-        case 'p':
+        case 'Pesto':
             this.price += 2;
             break;
         default:
@@ -76,8 +81,13 @@ $(document).ready(() => {
         myOrder.addPizza(newPizza)
         myOrder.calcTotal();
         console.log(myOrder);
+        $('#orders').append()
         myOrder.pizzas.forEach(pizza => {
-
+            $('#orders').append(`
+            <div class="order-card">
+            <p>Order #: ${pizza.id}</p>
+            </div>
+            `)
         })
 
 
