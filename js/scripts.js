@@ -24,6 +24,7 @@ function Pizza() {
     this.toppings = [];
     this.crust = '';
     this.sauce = '';
+    this.size = ''
     this.price = 10;
 }
 
@@ -35,6 +36,9 @@ Pizza.prototype.updateCrust = function (crust) {
 }
 Pizza.prototype.updateSauce = function (sauce) {
     this.sauce = sauce;
+}
+Pizza.prototype.updateSize = function (size) {
+    this.size = size;
 }
 Pizza.prototype.calcPrice = function () {
     this.toppings.forEach(topping => {
@@ -62,6 +66,16 @@ Pizza.prototype.calcPrice = function () {
             break;
         case 'Pesto':
             this.price += 2;
+            break;
+        default:
+            break;
+    }
+    switch (this.size) {
+        case 'Large':
+            this.price += 1;
+            break;
+        case 'Small':
+            this.price -= 2;
             break;
         default:
             break;
@@ -95,6 +109,7 @@ $(document).ready(() => {
         })
         newPizza.updateCrust($('#crustInput').val())
         newPizza.updateSauce($('#sauceInput').val())
+        newPizza.updateSize($('#sizeInput').val())
         newPizza.calcPrice();
         myOrder.addPizza(newPizza)
         myOrder.calcTotal();
@@ -106,6 +121,7 @@ $(document).ready(() => {
             <div id=${pizza.id} class="order-card">
             <p>Order #${pizza.id}</p>
             <img src=${chooseImg(pizza.crust)} alt='pizza'>
+            <p>Size: ${pizza.size}</p>
             <p>Cost: $${pizza.price}</p>
             </div>
             `)
